@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.10.0 on win32)" generated="20211102 01:28:48.114" rpa="false" schemaversion="2">
+<suite id="s1" name="ReadExcel" source="C:\Users\user\PycharmProjects\ReadExcel\TestCases\ReadExcel.robot">
+<test id="s1-t1" name="ReadExcel">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211102 01:28:49.583" level="INFO">Opening browser 'chrome' to base url 'https://thetestingworld.com'.</msg>
+<status status="PASS" starttime="20211102 01:28:49.582" endtime="20211102 01:28:57.668"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211102 01:28:57.671" endtime="20211102 01:28:57.814"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="ja-search"]/ul/li[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211102 01:28:57.819" level="INFO">Clicking element 'xpath://*[@id="ja-search"]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20211102 01:28:57.818" endtime="20211102 01:28:59.540"/>
+</kw>
+<kw name="Read NoOf Rows" library="Userdefinedkeyword">
+<var>${row}</var>
+<arg>Sheet1</arg>
+<kw name="Rows Of Numbers" library="ReadData">
+<var>${maxr}</var>
+<arg>${sheetname}</arg>
+<msg timestamp="20211102 01:28:59.545" level="INFO">${maxr} = 4</msg>
+<status status="PASS" starttime="20211102 01:28:59.543" endtime="20211102 01:28:59.545"/>
+</kw>
+<msg timestamp="20211102 01:28:59.546" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20211102 01:28:59.541" endtime="20211102 01:28:59.546"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${row}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:28:59.551" level="INFO">${UserExcel} = user1</msg>
+<status status="PASS" starttime="20211102 01:28:59.551" endtime="20211102 01:28:59.552"/>
+</kw>
+<msg timestamp="20211102 01:28:59.552" level="INFO">${Username} = user1</msg>
+<status status="PASS" starttime="20211102 01:28:59.549" endtime="20211102 01:28:59.552"/>
+</kw>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:28:59.555" level="INFO">${UserExcel} = pass1</msg>
+<status status="PASS" starttime="20211102 01:28:59.554" endtime="20211102 01:28:59.555"/>
+</kw>
+<msg timestamp="20211102 01:28:59.555" level="INFO">${Password} = pass1</msg>
+<status status="PASS" starttime="20211102 01:28:59.552" endtime="20211102 01:28:59.555"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:28:59.556" level="INFO">Typing text 'user1' into text field 'name:username'.</msg>
+<status status="PASS" starttime="20211102 01:28:59.556" endtime="20211102 01:29:00.065"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:00.066" level="INFO">Typing text 'pass1' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20211102 01:29:00.065" endtime="20211102 01:29:00.449"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:00.451" level="INFO">Clicking button 'xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20211102 01:29:00.450" endtime="20211102 01:29:01.570"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211102 01:29:01.570" endtime="20211102 01:29:01.572"/>
+</kw>
+<status status="PASS" starttime="20211102 01:28:59.549" endtime="20211102 01:29:01.572"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:29:01.578" level="INFO">${UserExcel} = user2</msg>
+<status status="PASS" starttime="20211102 01:29:01.576" endtime="20211102 01:29:01.578"/>
+</kw>
+<msg timestamp="20211102 01:29:01.580" level="INFO">${Username} = user2</msg>
+<status status="PASS" starttime="20211102 01:29:01.574" endtime="20211102 01:29:01.580"/>
+</kw>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:29:01.587" level="INFO">${UserExcel} = pass2</msg>
+<status status="PASS" starttime="20211102 01:29:01.585" endtime="20211102 01:29:01.587"/>
+</kw>
+<msg timestamp="20211102 01:29:01.588" level="INFO">${Password} = pass2</msg>
+<status status="PASS" starttime="20211102 01:29:01.581" endtime="20211102 01:29:01.589"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:01.591" level="INFO">Typing text 'user2' into text field 'name:username'.</msg>
+<status status="PASS" starttime="20211102 01:29:01.589" endtime="20211102 01:29:04.850"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:04.852" level="INFO">Typing text 'pass2' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20211102 01:29:04.850" endtime="20211102 01:29:08.152"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:08.153" level="INFO">Clicking button 'xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20211102 01:29:08.152" endtime="20211102 01:29:14.271"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211102 01:29:14.271" endtime="20211102 01:29:14.272"/>
+</kw>
+<status status="PASS" starttime="20211102 01:29:01.573" endtime="20211102 01:29:14.272"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:29:14.276" level="INFO">${UserExcel} = user3</msg>
+<status status="PASS" starttime="20211102 01:29:14.275" endtime="20211102 01:29:14.276"/>
+</kw>
+<msg timestamp="20211102 01:29:14.277" level="INFO">${Username} = user3</msg>
+<status status="PASS" starttime="20211102 01:29:14.273" endtime="20211102 01:29:14.277"/>
+</kw>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:29:14.280" level="INFO">${UserExcel} = pass3</msg>
+<status status="PASS" starttime="20211102 01:29:14.278" endtime="20211102 01:29:14.280"/>
+</kw>
+<msg timestamp="20211102 01:29:14.281" level="INFO">${Password} = pass3</msg>
+<status status="PASS" starttime="20211102 01:29:14.277" endtime="20211102 01:29:14.281"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:14.282" level="INFO">Typing text 'user3' into text field 'name:username'.</msg>
+<status status="PASS" starttime="20211102 01:29:14.281" endtime="20211102 01:29:17.505"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:17.507" level="INFO">Typing text 'pass3' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20211102 01:29:17.505" endtime="20211102 01:29:20.711"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:20.712" level="INFO">Clicking button 'xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20211102 01:29:20.711" endtime="20211102 01:29:26.885"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211102 01:29:26.885" endtime="20211102 01:29:26.886"/>
+</kw>
+<status status="PASS" starttime="20211102 01:29:14.273" endtime="20211102 01:29:26.886"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:29:26.888" level="INFO">${UserExcel} = user4</msg>
+<status status="PASS" starttime="20211102 01:29:26.888" endtime="20211102 01:29:26.889"/>
+</kw>
+<msg timestamp="20211102 01:29:26.890" level="INFO">${Username} = user4</msg>
+<status status="PASS" starttime="20211102 01:29:26.887" endtime="20211102 01:29:26.890"/>
+</kw>
+<kw name="Read NoOf Cell" library="Userdefinedkeyword">
+<var>${Password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Cell Data" library="ReadData">
+<var>${UserExcel}</var>
+<arg>${Sheename}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20211102 01:29:26.894" level="INFO">${UserExcel} = pass4</msg>
+<status status="PASS" starttime="20211102 01:29:26.892" endtime="20211102 01:29:26.894"/>
+</kw>
+<msg timestamp="20211102 01:29:26.895" level="INFO">${Password} = pass4</msg>
+<status status="PASS" starttime="20211102 01:29:26.890" endtime="20211102 01:29:26.895"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:26.897" level="INFO">Typing text 'user4' into text field 'name:username'.</msg>
+<status status="PASS" starttime="20211102 01:29:26.896" endtime="20211102 01:29:30.098"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:30.100" level="INFO">Typing text 'pass4' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20211102 01:29:30.099" endtime="20211102 01:29:33.316"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211102 01:29:33.317" level="INFO">Clicking button 'xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20211102 01:29:33.316" endtime="20211102 01:29:39.554"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211102 01:29:39.554" endtime="20211102 01:29:39.555"/>
+</kw>
+<status status="PASS" starttime="20211102 01:29:26.886" endtime="20211102 01:29:39.555"/>
+</iter>
+<status status="PASS" starttime="20211102 01:28:59.547" endtime="20211102 01:29:39.555"/>
+</for>
+<status status="PASS" starttime="20211102 01:28:49.578" endtime="20211102 01:29:39.556"/>
+</test>
+<status status="PASS" starttime="20211102 01:28:48.120" endtime="20211102 01:29:39.560"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="ReadExcel">ReadExcel</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
