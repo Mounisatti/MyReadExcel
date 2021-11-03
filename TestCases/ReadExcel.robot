@@ -19,7 +19,7 @@ ReadExcel
          input text  name:username   ${Username}
          input text  id:password  ${Password}
          click button    xpath://*[@id="ja-content-main"]/div/div/form/fieldset/button
-         set selenium speed  1seconds
+         set selenium speed  2seconds
     END
 
 
